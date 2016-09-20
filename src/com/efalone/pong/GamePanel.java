@@ -43,8 +43,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 		addKeyListener(this);
 	}
 	
-	public void run() {
-		
+	public void init() {
 		running = true;
 		
 		image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB); 
@@ -54,6 +53,11 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 		paddle2 = new Paddle(WIDTH / 2, 16);
 		
 		ball = new Ball();
+	}
+	
+	public void run() {
+		
+		init();
 		
 		long startTime;
 		long URDTimeMillis;
